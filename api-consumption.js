@@ -39,7 +39,7 @@ const nextScheduled = async (busRoute, stopName, direction) => {
     }), ['place_code'], '')
   })
 
-  if (placeCode !== '') return
+  if (placeCode === '') return
 
   // get departure_text from /stops api
   const departureText = await metroTransitApi(`/${getRouteId}/${directionId}/${placeCode}`, (response) => {
